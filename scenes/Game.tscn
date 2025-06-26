@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyi8e3yq5shns"]
+
+[ext_resource type="Texture2D" uid="uid://cywhtqxxonu50" path="res://assets/graphics/ui/background/main_page.jpg" id="1_ibkli"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Main Page" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibkli")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
