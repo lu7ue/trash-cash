@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyi8e3yq5shns"]
+[gd_scene load_steps=21 format=3 uid="uid://cyi8e3yq5shns"]
 
 [ext_resource type="Texture2D" uid="uid://cywhtqxxonu50" path="res://assets/graphics/ui/background/main_page.jpg" id="1_ibkli"]
+[ext_resource type="Texture2D" uid="uid://b74fgmoqksilo" path="res://assets/graphics/ui/button/info_btn.png" id="2_3xj3m"]
+[ext_resource type="Texture2D" uid="uid://b1rpvh2ut3q6o" path="res://assets/graphics/ui/money_icon.PNG" id="3_mcffj"]
+[ext_resource type="Texture2D" uid="uid://bh4tenkiovu2j" path="res://assets/graphics/ui/textarea/money_display_frame.png" id="4_2rd6h"]
+[ext_resource type="Texture2D" uid="uid://bsywtj2x76t4v" path="res://assets/graphics/ui/background/ground_area.jpg" id="5_7ua8r"]
+[ext_resource type="Texture2D" uid="uid://dpbetpq7a7eih" path="res://assets/graphics/ui/background/inventory_frame.jpg" id="6_r7sob"]
+[ext_resource type="FontFile" uid="uid://x21h18b2k05r" path="res://assets/font/DeliusUnicase-Bold.ttf" id="8_vjgi4"]
+[ext_resource type="FontFile" uid="uid://dc15kn1yn50ax" path="res://assets/font/DeliusUnicase-Regular.ttf" id="9_kyk2p"]
+[ext_resource type="Texture2D" uid="uid://b4n7fewo5ex28" path="res://assets/graphics/equipment/staff_human_icon.PNG" id="10_sv1m6"]
+[ext_resource type="Texture2D" uid="uid://yumsl4d7riyj" path="res://assets/graphics/equipment/staff_robot_icon.PNG" id="11_a8wo8"]
+[ext_resource type="Texture2D" uid="uid://calo0wsv6ujon" path="res://assets/graphics/equipment/staff_dog_icon.PNG" id="11_sv1m6"]
+[ext_resource type="Texture2D" uid="uid://c850i4eoeah6w" path="res://assets/graphics/equipment/staff_drone_icon.PNG" id="12_attvq"]
+[ext_resource type="Texture2D" uid="uid://cesd8wn5ldx6k" path="res://assets/graphics/equipment/tool_spoon_icon.PNG" id="13_bneo8"]
+[ext_resource type="Texture2D" uid="uid://diy2x1n8kwrnr" path="res://assets/graphics/equipment/tool_broom_icon.PNG" id="14_ocgqw"]
+[ext_resource type="Texture2D" uid="uid://vjsturslucru" path="res://assets/graphics/equipment/tool_net_icon.PNG" id="15_jbgew"]
+[ext_resource type="Texture2D" uid="uid://dg2mfqbf67fi3" path="res://assets/graphics/equipment/tool_vacuum_icon.PNG" id="16_a85ww"]
+[ext_resource type="Texture2D" uid="uid://bsd78pgubwksf" path="res://assets/graphics/equipment/drink_soda_icon.PNG" id="17_jhsr3"]
+[ext_resource type="Texture2D" uid="uid://bkklwcf6aah31" path="res://assets/graphics/equipment/drink_juice_icon.PNG" id="18_0bq3a"]
+[ext_resource type="Texture2D" uid="uid://de36kfde4tlm1" path="res://assets/graphics/equipment/drink_cola_icon.PNG" id="19_754j2"]
+[ext_resource type="Texture2D" uid="uid://d3kygbcemwuyk" path="res://assets/graphics/equipment/drink_tea_icon.PNG" id="20_i4jil"]
 
 [node name="Game" type="Node2D"]
 
@@ -10,3 +29,688 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
+
+[node name="Tool Bar" type="Node2D" parent="."]
+
+[node name="Info" type="Node2D" parent="Tool Bar"]
+
+[node name="Info Button" type="Button" parent="Tool Bar/Info"]
+offset_left = -932.0
+offset_top = -523.0
+offset_right = -849.0
+offset_bottom = -475.0
+scale = Vector2(1.47999, 1.28)
+icon = ExtResource("2_3xj3m")
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Info Label" type="Label" parent="Tool Bar/Info"]
+offset_left = -904.0
+offset_top = -510.0
+offset_right = -835.0
+offset_bottom = -477.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Info"
+
+[node name="Money" type="Node2D" parent="Tool Bar"]
+
+[node name="Money Icon" type="Sprite2D" parent="Tool Bar/Money"]
+position = Vector2(896, -494)
+texture = ExtResource("3_mcffj")
+metadata/_edit_lock_ = true
+
+[node name="Money Display Frame" type="Sprite2D" parent="Tool Bar/Money"]
+position = Vector2(791, -493)
+texture = ExtResource("4_2rd6h")
+metadata/_edit_lock_ = true
+
+[node name="Money Label" type="Label" parent="Tool Bar/Money"]
+offset_left = 739.0
+offset_top = -512.0
+offset_right = 843.0
+offset_bottom = -479.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "$ 00,00"
+
+[node name="Ground Area" type="Node2D" parent="."]
+
+[node name="Ground Area Background" type="Sprite2D" parent="Ground Area"]
+position = Vector2(0, -124)
+texture = ExtResource("5_7ua8r")
+metadata/_edit_lock_ = true
+
+[node name="Equipment" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Inventory Frame" type="Sprite2D" parent="Equipment"]
+position = Vector2(0, 386)
+texture = ExtResource("6_r7sob")
+metadata/_edit_lock_ = true
+
+[node name="Staff" type="Node2D" parent="Equipment"]
+position = Vector2(0, 23)
+metadata/_edit_lock_ = true
+
+[node name="Staff Name" type="Label" parent="Equipment/Staff"]
+offset_left = -943.0
+offset_top = 203.0
+offset_right = -813.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 36
+text = "Staff"
+
+[node name="Staff Description" type="Label" parent="Equipment/Staff"]
+offset_left = -813.0
+offset_top = 220.0
+offset_right = -443.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 20
+text = "Hire a staff to help you clean"
+
+[node name="Dog" type="Node2D" parent="Equipment/Staff"]
+position = Vector2(0, 17)
+
+[node name="Dog Icon" type="Button" parent="Equipment/Staff/Dog"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("11_sv1m6")
+flat = true
+
+[node name="Dog Name" type="Label" parent="Equipment/Staff/Dog"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Dog"
+
+[node name="Dog Price Label" type="Label" parent="Equipment/Staff/Dog"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Dog Description" type="Label" parent="Equipment/Staff/Dog"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Pick up one item in each X seconds"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Human" type="Node2D" parent="Equipment/Staff"]
+position = Vector2(322, 17)
+
+[node name="Human Icon" type="Button" parent="Equipment/Staff/Human"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("10_sv1m6")
+flat = true
+
+[node name="Human Name" type="Label" parent="Equipment/Staff/Human"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Human"
+
+[node name="Human Price Label" type="Label" parent="Equipment/Staff/Human"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Human Description" type="Label" parent="Equipment/Staff/Human"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Pick up one item in each X seconds"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Robot" type="Node2D" parent="Equipment/Staff"]
+position = Vector2(0, 133)
+
+[node name="Robot Icon" type="Button" parent="Equipment/Staff/Robot"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("11_a8wo8")
+flat = true
+
+[node name="Robot Name" type="Label" parent="Equipment/Staff/Robot"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Robot"
+
+[node name="Robot Price Label" type="Label" parent="Equipment/Staff/Robot"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Robot Description" type="Label" parent="Equipment/Staff/Robot"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Pick up one item in each X seconds"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Drone" type="Node2D" parent="Equipment/Staff"]
+position = Vector2(322, 133)
+
+[node name="Drone Icon" type="Button" parent="Equipment/Staff/Drone"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("12_attvq")
+flat = true
+
+[node name="Drone Name" type="Label" parent="Equipment/Staff/Drone"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Drone"
+
+[node name="Drone Price Label" type="Label" parent="Equipment/Staff/Drone"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Drone Description" type="Label" parent="Equipment/Staff/Drone"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Pick up one item in each X seconds"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tools" type="Node2D" parent="Equipment"]
+position = Vector2(637, 23)
+metadata/_edit_lock_ = true
+
+[node name="Tools Name" type="Label" parent="Equipment/Tools"]
+offset_left = -943.0
+offset_top = 203.0
+offset_right = -813.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 36
+text = "Tools"
+
+[node name="Tools Description" type="Label" parent="Equipment/Tools"]
+offset_left = -800.0
+offset_top = 220.0
+offset_right = -395.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 20
+text = "Buy a tool to increase the range"
+
+[node name="Spoon" type="Node2D" parent="Equipment/Tools"]
+position = Vector2(0, 17)
+
+[node name="Spoon Icon" type="Button" parent="Equipment/Tools/Spoon"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("13_bneo8")
+flat = true
+
+[node name="Spoon Name" type="Label" parent="Equipment/Tools/Spoon"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Spoon"
+
+[node name="Spoon Price Label" type="Label" parent="Equipment/Tools/Spoon"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spoon Description" type="Label" parent="Equipment/Tools/Spoon"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Small range, low durability"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Broom" type="Node2D" parent="Equipment/Tools"]
+position = Vector2(322, 17)
+
+[node name="Broom Icon" type="Button" parent="Equipment/Tools/Broom"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("14_ocgqw")
+flat = true
+
+[node name="Broom Name" type="Label" parent="Equipment/Tools/Broom"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Broom"
+
+[node name="Broom Price Label" type="Label" parent="Equipment/Tools/Broom"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Broom Description" type="Label" parent="Equipment/Tools/Broom"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Medium range, moderate durability"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Net" type="Node2D" parent="Equipment/Tools"]
+position = Vector2(0, 133)
+
+[node name="Net Icon" type="Button" parent="Equipment/Tools/Net"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("15_jbgew")
+flat = true
+
+[node name="Net Name" type="Label" parent="Equipment/Tools/Net"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Net"
+
+[node name="Net Price Label" type="Label" parent="Equipment/Tools/Net"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Net Description" type="Label" parent="Equipment/Tools/Net"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Wide range, moderate durability"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Vacuum" type="Node2D" parent="Equipment/Tools"]
+position = Vector2(322, 133)
+
+[node name="Vacuum Icon" type="Button" parent="Equipment/Tools/Vacuum"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("16_a85ww")
+flat = true
+
+[node name="Vacuum Name" type="Label" parent="Equipment/Tools/Vacuum"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Vacuum"
+
+[node name="Vacuum Price Label" type="Label" parent="Equipment/Tools/Vacuum"]
+offset_left = -712.0
+offset_top = 284.0
+offset_right = -636.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Vacuum Description" type="Label" parent="Equipment/Tools/Vacuum"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Very wide range, high durability"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Drinks" type="Node2D" parent="Equipment"]
+position = Vector2(1278, 23)
+metadata/_edit_lock_ = true
+
+[node name="Drinks Name" type="Label" parent="Equipment/Drinks"]
+offset_left = -943.0
+offset_top = 203.0
+offset_right = -813.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 36
+text = "Drinks"
+
+[node name="Drinks Description" type="Label" parent="Equipment/Drinks"]
+offset_left = -789.0
+offset_top = 220.0
+offset_right = -404.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 20
+text = "Increase the price of all junks"
+
+[node name="Soda" type="Node2D" parent="Equipment/Drinks"]
+position = Vector2(0, 17)
+
+[node name="Soda Icon" type="Button" parent="Equipment/Drinks/Soda"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("17_jhsr3")
+flat = true
+
+[node name="Soda Name" type="Label" parent="Equipment/Drinks/Soda"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Soda"
+
+[node name="Soda Price Label" type="Label" parent="Equipment/Drinks/Soda"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Soda Description" type="Label" parent="Equipment/Drinks/Soda"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Increase the price for X seconds"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Juice" type="Node2D" parent="Equipment/Drinks"]
+position = Vector2(322, 17)
+
+[node name="Juice Icon" type="Button" parent="Equipment/Drinks/Juice"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("18_0bq3a")
+flat = true
+
+[node name="Juice Name" type="Label" parent="Equipment/Drinks/Juice"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Juice"
+
+[node name="Juice Price Label" type="Label" parent="Equipment/Drinks/Juice"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Juice Description" type="Label" parent="Equipment/Drinks/Juice"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Increase the price for X seconds"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cola" type="Node2D" parent="Equipment/Drinks"]
+position = Vector2(0, 133)
+
+[node name="Cola Icon" type="Button" parent="Equipment/Drinks/Cola"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("19_754j2")
+flat = true
+
+[node name="Cola Name" type="Label" parent="Equipment/Drinks/Cola"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Cola"
+
+[node name="Cola Price Label" type="Label" parent="Equipment/Drinks/Cola"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cola Description" type="Label" parent="Equipment/Drinks/Cola"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Increase the price for X seconds"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tea" type="Node2D" parent="Equipment/Drinks"]
+position = Vector2(322, 133)
+
+[node name="Tea Icon" type="Button" parent="Equipment/Drinks/Tea"]
+offset_left = -945.0
+offset_top = 274.0
+offset_right = -837.0
+offset_bottom = 382.0
+icon = ExtResource("20_i4jil")
+flat = true
+
+[node name="Tea Name" type="Label" parent="Equipment/Drinks/Tea"]
+offset_left = -830.0
+offset_top = 283.0
+offset_right = -771.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_font_sizes/font_size = 25
+text = "Tea"
+
+[node name="Tea Price Label" type="Label" parent="Equipment/Drinks/Tea"]
+offset_left = -722.0
+offset_top = 284.0
+offset_right = -646.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 17
+text = "$ 12,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tea Description" type="Label" parent="Equipment/Drinks/Tea"]
+offset_left = -829.0
+offset_top = 315.0
+offset_right = -661.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_font_sizes/font_size = 12
+text = "Increase the price for X seconds"
+vertical_alignment = 1
+autowrap_mode = 2

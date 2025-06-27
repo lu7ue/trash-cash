@@ -13,4 +13,8 @@ config_version=5
 config/name="finders-keepers"
 run/main_scene="uid://dth0sargccsp4"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=4
+window/stretch/mode="canvas_items"
