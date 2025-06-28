@@ -75,6 +75,7 @@ offset_left = -191.0
 offset_top = 43.0
 offset_right = 421.0
 offset_bottom = 201.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("2_yx83k")
 flat = true
 metadata/_edit_use_anchors_ = true

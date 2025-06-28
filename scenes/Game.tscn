@@ -39,30 +39,32 @@ offset_left = -932.0
 offset_top = -523.0
 offset_right = -849.0
 offset_bottom = -475.0
-scale = Vector2(1.47999, 1.28)
+scale = Vector2(0.25, 0.216)
 icon = ExtResource("2_3xj3m")
 flat = true
 metadata/_edit_lock_ = true
 
 [node name="Info Label" type="Label" parent="Tool Bar/Info"]
-offset_left = -904.0
-offset_top = -510.0
-offset_right = -835.0
-offset_bottom = -477.0
+offset_left = -924.0
+offset_top = -519.0
+offset_right = -855.0
+offset_bottom = -486.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("8_vjgi4")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 22
 text = "Info"
 
 [node name="Money" type="Node2D" parent="Tool Bar"]
 
 [node name="Money Icon" type="Sprite2D" parent="Tool Bar/Money"]
 position = Vector2(896, -494)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_mcffj")
 metadata/_edit_lock_ = true
 
 [node name="Money Display Frame" type="Sprite2D" parent="Tool Bar/Money"]
 position = Vector2(791, -493)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_2rd6h")
 metadata/_edit_lock_ = true
 
