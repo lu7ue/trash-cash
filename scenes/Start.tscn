@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://dth0sargccsp4"]
+[gd_scene load_steps=40 format=3 uid="uid://dth0sargccsp4"]
 
 [ext_resource type="Texture2D" uid="uid://b6byid4afjs1g" path="res://assets/graphics/ui/background/start_page.jpg" id="1_8t08e"]
 [ext_resource type="Script" uid="uid://su34bffotfp1" path="res://scripts/start.gd" id="1_waqk2"]
 [ext_resource type="Texture2D" uid="uid://ckxw248qhus4l" path="res://assets/graphics/ui/button/start_btn.png" id="2_yx83k"]
-[ext_resource type="FontFile" uid="uid://dc15kn1yn50ax" path="res://assets/font/DeliusUnicase-Regular.ttf" id="3_lynlw"]
-[ext_resource type="FontFile" uid="uid://x21h18b2k05r" path="res://assets/font/DeliusUnicase-Bold.ttf" id="4_h1lxu"]
+[ext_resource type="FontFile" uid="uid://bcxi75wos6phq" path="res://assets/font/ComicRelief-Regular.ttf" id="4_waqk2"]
 [ext_resource type="Texture2D" uid="uid://jpbg5v1fn7gu" path="res://assets/graphics/items/apple_core.png" id="5_d48hf"]
+[ext_resource type="FontFile" uid="uid://doi130l25k233" path="res://assets/font/ComicRelief-Bold.ttf" id="5_pxerq"]
 [ext_resource type="Texture2D" uid="uid://dqvxedmxy65rh" path="res://assets/graphics/items/banana_peel.png" id="6_yrm6t"]
 [ext_resource type="Texture2D" uid="uid://dclkebqjamlpi" path="res://assets/graphics/items/big_bone.png" id="7_q7y7s"]
 [ext_resource type="Texture2D" uid="uid://pgp6t8xydmvc" path="res://assets/graphics/items/can.png" id="8_pse3a"]
@@ -16,10 +16,97 @@
 [ext_resource type="Texture2D" uid="uid://bph2fb0sbuv5v" path="res://assets/graphics/items/plastic_bottle.png" id="13_t30no"]
 [ext_resource type="Texture2D" uid="uid://bv1jy26mn08t7" path="res://assets/graphics/items/poop.png" id="14_yig4q"]
 [ext_resource type="Texture2D" uid="uid://dpgj6kihidhci" path="res://assets/graphics/items/waste_paper_box.PNG" id="15_qk2b7"]
-[ext_resource type="Texture2D" uid="uid://73w5iuofhin1" path="res://assets/graphics/equipment/staff_dog_01.PNG" id="16_yjm7g"]
-[ext_resource type="Texture2D" uid="uid://d22m5mkb8i2d8" path="res://assets/graphics/equipment/staff_human_01.PNG" id="17_bd0m1"]
-[ext_resource type="Texture2D" uid="uid://qmdcqred60aq" path="res://assets/graphics/equipment/staff_robot_01.PNG" id="18_daehs"]
-[ext_resource type="Texture2D" uid="uid://bg8frirsxjepq" path="res://assets/graphics/equipment/staff_drone_01.PNG" id="19_lklxn"]
+[ext_resource type="Texture2D" uid="uid://c7byte7b7qda5" path="res://assets/graphics/equipment/staff_dog_sprite_sheet.png" id="17_waqk2"]
+[ext_resource type="Texture2D" uid="uid://bbuk0848dq8a8" path="res://assets/graphics/equipment/staff_human_sprite_sheet.png" id="18_waqk2"]
+[ext_resource type="Texture2D" uid="uid://djww6babpqy7s" path="res://assets/graphics/equipment/staff_robot_sprite_sheet.png" id="19_waqk2"]
+[ext_resource type="Texture2D" uid="uid://2fn4chx81n7a" path="res://assets/graphics/equipment/staff_drone_sprite_sheet.png" id="20_pxerq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjm7g"]
+atlas = ExtResource("17_waqk2")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd0m1"]
+atlas = ExtResource("17_waqk2")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daehs"]
+atlas = ExtResource("17_waqk2")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lklxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjm7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd0m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daehs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t30no"]
+atlas = ExtResource("18_waqk2")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yig4q"]
+atlas = ExtResource("18_waqk2")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk2b7"]
+atlas = ExtResource("18_waqk2")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjm7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t30no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yig4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk2b7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxerq"]
+atlas = ExtResource("19_waqk2")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5kk3"]
+atlas = ExtResource("19_waqk2")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g3mv"]
+atlas = ExtResource("19_waqk2")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t30no"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxerq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5kk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5g3mv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_waqk2"]
 length = 0.001
@@ -59,6 +146,35 @@ _data = {
 &"move_to_right": SubResource("Animation_pse3a")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6csp0"]
+atlas = ExtResource("20_pxerq")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq861"]
+atlas = ExtResource("20_pxerq")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km11c"]
+atlas = ExtResource("20_pxerq")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kb05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6csp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq861")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km11c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Start" type="Node2D"]
 position = Vector2(0, -32)
 script = ExtResource("1_waqk2")
@@ -71,106 +187,125 @@ metadata/_edit_lock_ = true
 zoom = Vector2(0.6, 0.6)
 
 [node name="Start Button" type="Button" parent="."]
-offset_left = -191.0
-offset_top = 43.0
-offset_right = 421.0
-offset_bottom = 201.0
-scale = Vector2(0.25, 0.25)
+offset_left = -113.0
+offset_top = 52.0
+offset_right = 1415.0
+offset_bottom = 660.0
+scale = Vector2(0.15, 0.15)
 icon = ExtResource("2_yx83k")
 flat = true
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="Start Btn Label" type="Label" parent="."]
-offset_left = -121.0
-offset_top = 70.0
-offset_right = 131.0
-offset_bottom = 194.0
+offset_left = -143.0
+offset_top = 45.0
+offset_right = 146.0
+offset_bottom = 200.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("3_lynlw")
-theme_override_font_sizes/font_size = 70
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_waqk2")
+theme_override_font_sizes/font_size = 75
 text = "Start"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="Game Title Label" type="Label" parent="."]
 offset_left = -749.0
 offset_top = -293.0
 offset_right = 755.0
 offset_bottom = 3.0
-theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("4_h1lxu")
-theme_override_font_sizes/font_size = 230
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_pxerq")
+theme_override_font_sizes/font_size = 260
 text = "Trash Cash"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Apple Core" type="Sprite2D" parent="Items"]
 position = Vector2(808, 50)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_d48hf")
 
 [node name="Banana Peel" type="Sprite2D" parent="Items"]
 position = Vector2(-440, 419)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_yrm6t")
 
 [node name="Big Bone" type="Sprite2D" parent="Items"]
 position = Vector2(-287, 303)
 rotation = 0.160494
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_q7y7s")
 
 [node name="Can" type="Sprite2D" parent="Items"]
 position = Vector2(-368, 149)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_pse3a")
 
 [node name="Cash" type="Sprite2D" parent="Items"]
 position = Vector2(-65, 360)
 rotation = -2.89081
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_waqk2")
 
 [node name="Fish Bone" type="Sprite2D" parent="Items"]
 position = Vector2(428, 276)
 rotation = -0.302976
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_pxerq")
 
 [node name="Medicine Bottle" type="Sprite2D" parent="Items"]
 position = Vector2(-765, 388)
 rotation = 0.348393
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_t5kk3")
 
 [node name="Plastic Bag" type="Sprite2D" parent="Items"]
 position = Vector2(352, 97)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_5g3mv")
 
 [node name="Plastic Bottle" type="Sprite2D" parent="Items"]
 position = Vector2(-778, 53)
 rotation = -0.281318
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_t30no")
 
 [node name="Poop" type="Sprite2D" parent="Items"]
 position = Vector2(745, 427)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_yig4q")
 
 [node name="Waste Paper Box" type="Sprite2D" parent="Items"]
 position = Vector2(619, 181)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_qk2b7")
 
-[node name="Dog" type="Sprite2D" parent="Items"]
+[node name="Dog" type="AnimatedSprite2D" parent="Items"]
 position = Vector2(634, 404)
-texture = ExtResource("16_yjm7g")
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_lklxn")
+autoplay = "default"
+frame_progress = 0.249328
 
-[node name="Human" type="Sprite2D" parent="Items"]
+[node name="Human" type="AnimatedSprite2D" parent="Items"]
 position = Vector2(190, 379)
-texture = ExtResource("17_bd0m1")
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_yjm7g")
+autoplay = "default"
+frame_progress = 0.115421
 
-[node name="Robot" type="Sprite2D" parent="Items"]
+[node name="Robot" type="AnimatedSprite2D" parent="Items"]
 position = Vector2(-600, 217)
-texture = ExtResource("18_daehs")
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_t30no")
+autoplay = "default"
+frame_progress = 0.548302
 
 [node name="Drone" type="Node2D" parent="Items"]
 
@@ -179,8 +314,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_waqk2")
 }
 
-[node name="Drone Image" type="Sprite2D" parent="Items/Drone"]
+[node name="Drone Image" type="AnimatedSprite2D" parent="Items/Drone"]
 position = Vector2(-746, -360)
-texture = ExtResource("19_lklxn")
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_0kb05")
+autoplay = "default"
+frame_progress = 0.00363518
 
 [connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]

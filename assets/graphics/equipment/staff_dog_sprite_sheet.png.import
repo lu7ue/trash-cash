@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cywhtqxxonu50"
-path="res://.godot/imported/main_page.jpg-c9d99204ed0f34a9892b1ec304076c9a.ctex"
+uid="uid://c7byte7b7qda5"
+path="res://.godot/imported/staff_dog_sprite_sheet.png-56a33587db8c21af8244882692bcdb83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/ui/background/main_page.jpg"
-dest_files=["res://.godot/imported/main_page.jpg-c9d99204ed0f34a9892b1ec304076c9a.ctex"]
+source_file="res://assets/graphics/equipment/staff_dog_sprite_sheet.png"
+dest_files=["res://.godot/imported/staff_dog_sprite_sheet.png-56a33587db8c21af8244882692bcdb83.ctex"]
 
 [params]
 

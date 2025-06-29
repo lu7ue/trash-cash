@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dc15kn1yn50ax"
-path="res://.godot/imported/DeliusUnicase-Regular.ttf-8f7930e3317360e5fef975203be57ba8.fontdata"
+uid="uid://doi130l25k233"
+path="res://.godot/imported/ComicRelief-Bold.ttf-6f98b6ab3f7138db0e3d8f9eb4f3665e.fontdata"
 
 [deps]
 
-source_file="res://assets/font/DeliusUnicase-Regular.ttf"
-dest_files=["res://.godot/imported/DeliusUnicase-Regular.ttf-8f7930e3317360e5fef975203be57ba8.fontdata"]
+source_file="res://assets/font/ComicRelief-Bold.ttf"
+dest_files=["res://.godot/imported/ComicRelief-Bold.ttf-6f98b6ab3f7138db0e3d8f9eb4f3665e.fontdata"]
 
 [params]
 
