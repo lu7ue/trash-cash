@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cyi8e3yq5shns"]
+[gd_scene load_steps=22 format=3 uid="uid://cyi8e3yq5shns"]
 
+[ext_resource type="Script" uid="uid://qlqm2lh8c48q" path="res://scripts/game.gd" id="1_a8wo8"]
 [ext_resource type="Texture2D" uid="uid://cywhtqxxonu50" path="res://assets/graphics/ui/background/main_page.jpg" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://b74fgmoqksilo" path="res://assets/graphics/ui/button/info_btn.png" id="2_3xj3m"]
 [ext_resource type="Texture2D" uid="uid://b1rpvh2ut3q6o" path="res://assets/graphics/ui/money_icon.PNG" id="3_mcffj"]
@@ -22,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://d3kygbcemwuyk" path="res://assets/graphics/equipment/drink_tea_icon.PNG" id="20_i4jil"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_a8wo8")
 
 [node name="Main Page" type="Sprite2D" parent="."]
 texture = ExtResource("1_ibkli")
@@ -63,15 +65,15 @@ texture = ExtResource("3_mcffj")
 metadata/_edit_lock_ = true
 
 [node name="Money Display Frame" type="Sprite2D" parent="Tool Bar/Money"]
-position = Vector2(791, -493)
+visible = false
+position = Vector2(750, -493)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_2rd6h")
-metadata/_edit_lock_ = true
 
 [node name="Money Label" type="Label" parent="Tool Bar/Money"]
-offset_left = 739.0
+offset_left = 720.0
 offset_top = -512.0
-offset_right = 843.0
+offset_right = 824.0
 offset_bottom = -479.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("8_vjgi4")

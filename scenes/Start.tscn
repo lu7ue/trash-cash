@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c84ggclwr0otn" path="res://assets/graphics/items/plastic_bag.PNG" id="12_5g3mv"]
 [ext_resource type="Texture2D" uid="uid://bph2fb0sbuv5v" path="res://assets/graphics/items/plastic_bottle.png" id="13_t30no"]
 [ext_resource type="Texture2D" uid="uid://bv1jy26mn08t7" path="res://assets/graphics/items/poop.png" id="14_yig4q"]
-[ext_resource type="Texture2D" uid="uid://dpgj6kihidhci" path="res://assets/graphics/items/waste_paper_box.PNG" id="15_qk2b7"]
+[ext_resource type="Texture2D" uid="uid://dpgj6kihidhci" path="res://assets/graphics/items/waste_paper_box.png" id="15_qk2b7"]
 [ext_resource type="Texture2D" uid="uid://73w5iuofhin1" path="res://assets/graphics/equipment/staff_dog_01.PNG" id="16_yjm7g"]
 [ext_resource type="Texture2D" uid="uid://d22m5mkb8i2d8" path="res://assets/graphics/equipment/staff_human_01.PNG" id="17_bd0m1"]
 [ext_resource type="Texture2D" uid="uid://qmdcqred60aq" path="res://assets/graphics/equipment/staff_robot_01.PNG" id="18_daehs"]
