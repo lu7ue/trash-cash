@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpbetpq7a7eih"
-path="res://.godot/imported/inventory_frame.jpg-0e044a8bf61c00e08e3e086e5ded75ec.ctex"
+uid="uid://2fn4chx81n7a"
+path="res://.godot/imported/staff_drone_sprite_sheet.png-efe13369aff39c62eef598498fd8bedc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/ui/background/inventory_frame.jpg"
-dest_files=["res://.godot/imported/inventory_frame.jpg-0e044a8bf61c00e08e3e086e5ded75ec.ctex"]
+source_file="res://assets/graphics/equipment/staff_drone_sprite_sheet.png"
+dest_files=["res://.godot/imported/staff_drone_sprite_sheet.png-efe13369aff39c62eef598498fd8bedc.ctex"]
 
 [params]
 

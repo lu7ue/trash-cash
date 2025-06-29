@@ -1,14 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyi8e3yq5shns"]
+[gd_scene load_steps=20 format=3 uid="uid://cyi8e3yq5shns"]
 
 [ext_resource type="Script" uid="uid://qlqm2lh8c48q" path="res://scripts/game.gd" id="1_a8wo8"]
-[ext_resource type="Texture2D" uid="uid://cywhtqxxonu50" path="res://assets/graphics/ui/background/main_page.jpg" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://b74fgmoqksilo" path="res://assets/graphics/ui/button/info_btn.png" id="2_3xj3m"]
+[ext_resource type="Texture2D" uid="uid://b80bc2ejt7h2n" path="res://assets/graphics/ui/background/main_page.PNG" id="1_45i86"]
+[ext_resource type="FontFile" uid="uid://doi130l25k233" path="res://assets/font/ComicRelief-Bold.ttf" id="3_a8wo8"]
 [ext_resource type="Texture2D" uid="uid://b1rpvh2ut3q6o" path="res://assets/graphics/ui/money_icon.PNG" id="3_mcffj"]
 [ext_resource type="Texture2D" uid="uid://bh4tenkiovu2j" path="res://assets/graphics/ui/textarea/money_display_frame.png" id="4_2rd6h"]
 [ext_resource type="Texture2D" uid="uid://bsywtj2x76t4v" path="res://assets/graphics/ui/background/ground_area.jpg" id="5_7ua8r"]
-[ext_resource type="Texture2D" uid="uid://dpbetpq7a7eih" path="res://assets/graphics/ui/background/inventory_frame.jpg" id="6_r7sob"]
-[ext_resource type="FontFile" uid="uid://x21h18b2k05r" path="res://assets/font/DeliusUnicase-Bold.ttf" id="8_vjgi4"]
-[ext_resource type="FontFile" uid="uid://dc15kn1yn50ax" path="res://assets/font/DeliusUnicase-Regular.ttf" id="9_kyk2p"]
+[ext_resource type="FontFile" uid="uid://bcxi75wos6phq" path="res://assets/font/ComicRelief-Regular.ttf" id="5_attvq"]
+[ext_resource type="Texture2D" uid="uid://bnvvoqewulsdj" path="res://assets/graphics/ui/background/inventory_frame.PNG" id="6_sv1m6"]
 [ext_resource type="Texture2D" uid="uid://b4n7fewo5ex28" path="res://assets/graphics/equipment/staff_human_icon.PNG" id="10_sv1m6"]
 [ext_resource type="Texture2D" uid="uid://yumsl4d7riyj" path="res://assets/graphics/equipment/staff_robot_icon.PNG" id="11_a8wo8"]
 [ext_resource type="Texture2D" uid="uid://calo0wsv6ujon" path="res://assets/graphics/equipment/staff_dog_icon.PNG" id="11_sv1m6"]
@@ -26,7 +26,8 @@
 script = ExtResource("1_a8wo8")
 
 [node name="Main Page" type="Sprite2D" parent="."]
-texture = ExtResource("1_ibkli")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_45i86")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -35,6 +36,7 @@ zoom = Vector2(0.6, 0.6)
 [node name="Tool Bar" type="Node2D" parent="."]
 
 [node name="Info" type="Node2D" parent="Tool Bar"]
+position = Vector2(12, -10)
 
 [node name="Info Button" type="Button" parent="Tool Bar/Info"]
 offset_left = -932.0
@@ -42,21 +44,24 @@ offset_top = -523.0
 offset_right = -849.0
 offset_bottom = -475.0
 scale = Vector2(0.25, 0.216)
-icon = ExtResource("2_3xj3m")
+icon = ExtResource("4_2rd6h")
 flat = true
 metadata/_edit_lock_ = true
 
 [node name="Info Label" type="Label" parent="Tool Bar/Info"]
-offset_left = -924.0
-offset_top = -519.0
-offset_right = -855.0
-offset_bottom = -486.0
-theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
-theme_override_font_sizes/font_size = 22
+offset_left = -895.0
+offset_top = -523.0
+offset_right = -821.0
+offset_bottom = -474.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_a8wo8")
+theme_override_font_sizes/font_size = 32
 text = "Info"
 
 [node name="Money" type="Node2D" parent="Tool Bar"]
+position = Vector2(0, -18)
 
 [node name="Money Icon" type="Sprite2D" parent="Tool Bar/Money"]
 position = Vector2(896, -494)
@@ -71,19 +76,20 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_2rd6h")
 
 [node name="Money Label" type="Label" parent="Tool Bar/Money"]
-offset_left = 720.0
-offset_top = -512.0
-offset_right = 824.0
-offset_bottom = -479.0
+offset_left = 732.0
+offset_top = -515.0
+offset_right = 851.0
+offset_bottom = -470.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 32
 text = "$ 00,00"
 
 [node name="Ground Area" type="Node2D" parent="."]
 
 [node name="Ground Area Background" type="Sprite2D" parent="Ground Area"]
-position = Vector2(0, -124)
+position = Vector2(0, -152)
+scale = Vector2(0.25, 0.243939)
 texture = ExtResource("5_7ua8r")
 metadata/_edit_lock_ = true
 
@@ -91,31 +97,30 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Inventory Frame" type="Sprite2D" parent="Equipment"]
-position = Vector2(0, 386)
-texture = ExtResource("6_r7sob")
-metadata/_edit_lock_ = true
+position = Vector2(0, 407)
+scale = Vector2(0.25, 0.220833)
+texture = ExtResource("6_sv1m6")
 
 [node name="Staff" type="Node2D" parent="Equipment"]
-position = Vector2(0, 23)
-metadata/_edit_lock_ = true
+position = Vector2(0, 43)
 
 [node name="Staff Name" type="Label" parent="Equipment/Staff"]
 offset_left = -943.0
-offset_top = 203.0
+offset_top = 219.0
 offset_right = -813.0
-offset_bottom = 256.0
+offset_bottom = 272.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 36
 text = "Staff"
 
 [node name="Staff Description" type="Label" parent="Equipment/Staff"]
 offset_left = -813.0
-offset_top = 220.0
+offset_top = 236.0
 offset_right = -443.0
-offset_bottom = 252.0
+offset_bottom = 268.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 20
 text = "Hire a staff to help you clean"
 
@@ -127,6 +132,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("11_sv1m6")
 flat = true
 
@@ -136,7 +142,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Dog"
 
@@ -146,7 +152,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -155,12 +161,12 @@ autowrap_mode = 2
 
 [node name="Dog Description" type="Label" parent="Equipment/Staff/Dog"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Pick up one item in each X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -173,6 +179,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("10_sv1m6")
 flat = true
 
@@ -182,7 +189,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Human"
 
@@ -192,7 +199,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -201,12 +208,12 @@ autowrap_mode = 2
 
 [node name="Human Description" type="Label" parent="Equipment/Staff/Human"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Pick up one item in each X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -219,6 +226,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("11_a8wo8")
 flat = true
 
@@ -228,7 +236,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Robot"
 
@@ -238,7 +246,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -247,12 +255,12 @@ autowrap_mode = 2
 
 [node name="Robot Description" type="Label" parent="Equipment/Staff/Robot"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Pick up one item in each X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -265,6 +273,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("12_attvq")
 flat = true
 
@@ -274,7 +283,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Drone"
 
@@ -284,7 +293,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -293,37 +302,36 @@ autowrap_mode = 2
 
 [node name="Drone Description" type="Label" parent="Equipment/Staff/Drone"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Pick up one item in each X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Tools" type="Node2D" parent="Equipment"]
-position = Vector2(637, 23)
-metadata/_edit_lock_ = true
+position = Vector2(637, 43)
 
 [node name="Tools Name" type="Label" parent="Equipment/Tools"]
 offset_left = -943.0
-offset_top = 203.0
+offset_top = 219.0
 offset_right = -813.0
-offset_bottom = 256.0
+offset_bottom = 272.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 36
 text = "Tools"
 
 [node name="Tools Description" type="Label" parent="Equipment/Tools"]
 offset_left = -800.0
-offset_top = 220.0
+offset_top = 236.0
 offset_right = -395.0
-offset_bottom = 252.0
+offset_bottom = 268.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 20
 text = "Buy a tool to increase the range"
 
@@ -335,6 +343,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("13_bneo8")
 flat = true
 
@@ -344,7 +353,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Spoon"
 
@@ -354,7 +363,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -363,12 +372,12 @@ autowrap_mode = 2
 
 [node name="Spoon Description" type="Label" parent="Equipment/Tools/Spoon"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Small range, low durability"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -381,6 +390,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("14_ocgqw")
 flat = true
 
@@ -390,7 +400,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Broom"
 
@@ -400,7 +410,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -409,12 +419,12 @@ autowrap_mode = 2
 
 [node name="Broom Description" type="Label" parent="Equipment/Tools/Broom"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Medium range, moderate durability"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -427,6 +437,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("15_jbgew")
 flat = true
 
@@ -436,7 +447,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Net"
 
@@ -446,7 +457,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -455,12 +466,12 @@ autowrap_mode = 2
 
 [node name="Net Description" type="Label" parent="Equipment/Tools/Net"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Wide range, moderate durability"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -473,6 +484,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("16_a85ww")
 flat = true
 
@@ -482,7 +494,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Vacuum"
 
@@ -492,7 +504,7 @@ offset_top = 284.0
 offset_right = -636.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -501,37 +513,36 @@ autowrap_mode = 2
 
 [node name="Vacuum Description" type="Label" parent="Equipment/Tools/Vacuum"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Very wide range, high durability"
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Drinks" type="Node2D" parent="Equipment"]
-position = Vector2(1278, 23)
-metadata/_edit_lock_ = true
+position = Vector2(1278, 43)
 
 [node name="Drinks Name" type="Label" parent="Equipment/Drinks"]
 offset_left = -943.0
-offset_top = 203.0
+offset_top = 219.0
 offset_right = -813.0
-offset_bottom = 256.0
+offset_bottom = 272.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 36
 text = "Drinks"
 
 [node name="Drinks Description" type="Label" parent="Equipment/Drinks"]
 offset_left = -789.0
-offset_top = 220.0
+offset_top = 236.0
 offset_right = -404.0
-offset_bottom = 252.0
+offset_bottom = 268.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 20
 text = "Increase the price of all junks"
 
@@ -543,6 +554,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("17_jhsr3")
 flat = true
 
@@ -552,7 +564,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Soda"
 
@@ -562,7 +574,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -571,12 +583,12 @@ autowrap_mode = 2
 
 [node name="Soda Description" type="Label" parent="Equipment/Drinks/Soda"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Increase the price for X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -589,6 +601,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("18_0bq3a")
 flat = true
 
@@ -598,7 +611,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Juice"
 
@@ -608,7 +621,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -617,12 +630,12 @@ autowrap_mode = 2
 
 [node name="Juice Description" type="Label" parent="Equipment/Drinks/Juice"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Increase the price for X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -635,6 +648,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("19_754j2")
 flat = true
 
@@ -644,7 +658,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Cola"
 
@@ -654,7 +668,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -663,12 +677,12 @@ autowrap_mode = 2
 
 [node name="Cola Description" type="Label" parent="Equipment/Drinks/Cola"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Increase the price for X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
@@ -681,6 +695,7 @@ offset_left = -945.0
 offset_top = 274.0
 offset_right = -837.0
 offset_bottom = 382.0
+scale = Vector2(0.25, 0.25)
 icon = ExtResource("20_i4jil")
 flat = true
 
@@ -690,7 +705,7 @@ offset_top = 283.0
 offset_right = -771.0
 offset_bottom = 316.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("8_vjgi4")
+theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 25
 text = "Tea"
 
@@ -700,7 +715,7 @@ offset_top = 284.0
 offset_right = -646.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
+theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
 text = "$ 12,00"
 horizontal_alignment = 1
@@ -709,12 +724,12 @@ autowrap_mode = 2
 
 [node name="Tea Description" type="Label" parent="Equipment/Drinks/Tea"]
 offset_left = -829.0
-offset_top = 315.0
+offset_top = 323.0
 offset_right = -661.0
-offset_bottom = 361.0
+offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
-theme_override_fonts/font = ExtResource("9_kyk2p")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("5_attvq")
+theme_override_font_sizes/font_size = 15
 text = "Increase the price for X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
