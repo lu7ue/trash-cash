@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cyi8e3yq5shns"]
+[gd_scene load_steps=21 format=3 uid="uid://cyi8e3yq5shns"]
 
-[ext_resource type="Script" uid="uid://qlqm2lh8c48q" path="res://scripts/game.gd" id="1_a8wo8"]
-[ext_resource type="Texture2D" uid="uid://b74fgmoqksilo" path="res://assets/graphics/ui/button/info_btn.png" id="2_3xj3m"]
 [ext_resource type="Texture2D" uid="uid://b80bc2ejt7h2n" path="res://assets/graphics/ui/background/main_page.PNG" id="1_45i86"]
+[ext_resource type="Script" uid="uid://qlqm2lh8c48q" path="res://scripts/game.gd" id="1_a8wo8"]
 [ext_resource type="FontFile" uid="uid://doi130l25k233" path="res://assets/font/ComicRelief-Bold.ttf" id="3_a8wo8"]
 [ext_resource type="Texture2D" uid="uid://b1rpvh2ut3q6o" path="res://assets/graphics/ui/money_icon.PNG" id="3_mcffj"]
 [ext_resource type="Texture2D" uid="uid://bh4tenkiovu2j" path="res://assets/graphics/ui/textarea/money_display_frame.png" id="4_2rd6h"]
@@ -26,14 +25,16 @@
 script = ExtResource("1_a8wo8")
 
 [node name="Main Page" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.25, 0.250361)
 texture = ExtResource("1_45i86")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
+metadata/_edit_lock_ = true
 
 [node name="Tool Bar" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Info" type="Node2D" parent="Tool Bar"]
 position = Vector2(12, -10)
@@ -60,49 +61,51 @@ theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 32
 text = "Info"
 
-[node name="Money" type="Node2D" parent="Tool Bar"]
-position = Vector2(0, -18)
+[node name="Money" type="Control" parent="Tool Bar"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 3
+anchor_right = 1.0
+offset_top = -18.0
+offset_bottom = -18.0
 
-[node name="Money Icon" type="Sprite2D" parent="Tool Bar/Money"]
-position = Vector2(896, -494)
+[node name="Moneybag Icon" type="Sprite2D" parent="Tool Bar/Money"]
+top_level = true
+position = Vector2(900, -513)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_mcffj")
 metadata/_edit_lock_ = true
 
-[node name="Money Display Frame" type="Sprite2D" parent="Tool Bar/Money"]
-visible = false
-position = Vector2(750, -493)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_2rd6h")
-
 [node name="Money Label" type="Label" parent="Tool Bar/Money"]
-offset_left = 732.0
-offset_top = -515.0
-offset_right = 851.0
-offset_bottom = -470.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 480.0
+offset_top = -517.0
+offset_right = 558.0
+offset_bottom = -472.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 32
-text = "$ 00,00"
+text = "$ 0"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="Ground Area" type="Node2D" parent="."]
 
 [node name="Ground Area Background" type="Sprite2D" parent="Ground Area"]
-position = Vector2(0, -152)
-scale = Vector2(0.25, 0.243939)
+position = Vector2(0, -151.375)
+scale = Vector2(0.25, 0.248769)
 texture = ExtResource("5_7ua8r")
-metadata/_edit_lock_ = true
 
 [node name="Equipment" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Inventory Frame" type="Sprite2D" parent="Equipment"]
-position = Vector2(0, 407)
-scale = Vector2(0.25, 0.220833)
+position = Vector2(0, 360.031)
+scale = Vector2(0.25, 0.250043)
 texture = ExtResource("6_sv1m6")
 
 [node name="Staff" type="Node2D" parent="Equipment"]
-position = Vector2(0, 43)
+position = Vector2(0, -15)
 
 [node name="Staff Name" type="Label" parent="Equipment/Staff"]
 offset_left = -943.0
@@ -113,6 +116,7 @@ theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 36
 text = "Staff"
+metadata/_edit_use_anchors_ = true
 
 [node name="Staff Description" type="Label" parent="Equipment/Staff"]
 offset_left = -813.0
@@ -123,6 +127,7 @@ theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 20
 text = "Hire a staff to help you clean"
+metadata/_edit_use_anchors_ = true
 
 [node name="Dog" type="Node2D" parent="Equipment/Staff"]
 position = Vector2(0, 17)
@@ -313,7 +318,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Tools" type="Node2D" parent="Equipment"]
-position = Vector2(637, 43)
+position = Vector2(640, -15)
 
 [node name="Tools Name" type="Label" parent="Equipment/Tools"]
 offset_left = -943.0
@@ -324,6 +329,7 @@ theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("3_a8wo8")
 theme_override_font_sizes/font_size = 36
 text = "Tools"
+metadata/_edit_use_anchors_ = true
 
 [node name="Tools Description" type="Label" parent="Equipment/Tools"]
 offset_left = -800.0
@@ -334,6 +340,7 @@ theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 20
 text = "Buy a tool to increase the range"
+metadata/_edit_use_anchors_ = true
 
 [node name="Spoon" type="Node2D" parent="Equipment/Tools"]
 position = Vector2(0, 17)
@@ -499,9 +506,9 @@ theme_override_font_sizes/font_size = 25
 text = "Vacuum"
 
 [node name="Vacuum Price Label" type="Label" parent="Equipment/Tools/Vacuum"]
-offset_left = -712.0
+offset_left = -720.0
 offset_top = 284.0
-offset_right = -636.0
+offset_right = -644.0
 offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
@@ -524,7 +531,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Drinks" type="Node2D" parent="Equipment"]
-position = Vector2(1278, 43)
+position = Vector2(1280, -15)
 
 [node name="Drinks Name" type="Label" parent="Equipment/Drinks"]
 offset_left = -943.0

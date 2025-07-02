@@ -18,4 +18,4 @@ func _ready() -> void:
 	_on_money_changed(GameState.player_money)
 
 func _on_money_changed(amount: int) -> void:
-	money_label.text = "$ %d" % amount
+	money_label.text = "$ " + str(amount)

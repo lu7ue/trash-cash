@@ -22,6 +22,7 @@ func _ready() -> void:
 	# Add sprite
 	var sprite = Sprite2D.new()
 	sprite.texture = load(get_texture_path())
+	sprite.scale = Vector2(0.25, 0.25)
 	add_child(sprite)
 	
 	
@@ -45,9 +46,9 @@ func get_texture_path() -> String:
 		"big_bone": return "res://assets/graphics/items/big_bone.png"
 		"battery": return "res://assets/graphics/items/waste_battery.png"
 		"medicine_bottle": return "res://assets/graphics/items/medicine_bottle.png"
-		#"poop": return "res://assets/graphics/items/poop.png"
+		"poop": return "res://assets/graphics/items/poop.png"
 		"cash": return "res://assets/graphics/items/cash.png"
-		_: return "res://assets/graphics/items/default.png"
+		_: return ""
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -56,13 +57,12 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			GameState.remove_money(value)  # Poop stops deducting when clicked
 		else:
 			GameState.add_money(value)
-		
-		# Show floating text
-		var floating_text = floating_text_scene.instantiate()
-		floating_text.position = position
-		floating_text.set_text("%s%d" % ["+" if value > 0 else "-", abs(value)])
-		get_parent().add_child(floating_text)
-		
+			
+			var floating_text = floating_text_scene.instantiate()
+			floating_text.global_position = global_position
+			floating_text.set_text("+%d" % value)
+			get_tree().get_root().add_child(floating_text)
+
 		# Remove item
 		queue_free()
 
@@ -70,6 +70,6 @@ func _on_poop_penalty() -> void:
 	if is_poop:
 		GameState.remove_money(10)
 		var floating_text = floating_text_scene.instantiate()
-		floating_text.position = position
+		floating_text.position = global_position
 		floating_text.set_text("-10")
 		get_parent().add_child(floating_text)
