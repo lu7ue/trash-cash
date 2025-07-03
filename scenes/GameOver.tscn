@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://w2d7dpuu1pfc"]
+
+[ext_resource type="Script" uid="uid://cbhlfcpoaiits" path="res://scripts/game_over.gd" id="1_4noiy"]
+[ext_resource type="Texture2D" uid="uid://c8dx6j47qnjqj" path="res://assets/graphics/ui/textarea/popup_frame_win.png" id="2_gijjb"]
+[ext_resource type="FontFile" uid="uid://bcxi75wos6phq" path="res://assets/font/ComicRelief-Regular.ttf" id="3_88ekj"]
+[ext_resource type="FontFile" uid="uid://doi130l25k233" path="res://assets/font/ComicRelief-Bold.ttf" id="4_0winm"]
+
+[node name="GameOver" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_4noiy")
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 185.0
+offset_right = 2771.0
+offset_bottom = 1465.0
+scale = Vector2(0.18, 0.18)
+mouse_filter = 2
+texture = ExtResource("2_gijjb")
+
+[node name="Game Over Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 240.0
+offset_right = 673.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("3_88ekj")
+theme_override_font_sizes/font_size = 40
+text = "You Win!"
+
+[node name="Play Again Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 320.0
+offset_right = 669.0
+offset_bottom = 371.0
+theme_override_colors/font_outline_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_0winm")
+theme_override_font_sizes/font_size = 26
+text = "Play Again"
+flat = true
+
+[connection signal="pressed" from="Panel/Play Again Button" to="." method="_on_play_again_button_pressed"]
