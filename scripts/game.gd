@@ -28,14 +28,14 @@ func _ready() -> void:
 	# Create Info instance
 	info_instance = InfoScene.instantiate()
 	info_instance.visible = false
-	info_instance.layer = 0  # 确保 Info 在 GameOver 之下
+	info_instance.layer = 0
 	add_child(info_instance)
 	print("Info instance added:", info_instance)
 	
 	# Create GameOver instance
 	game_over_instance = GameOverScene.instantiate()
 	game_over_instance.visible = false
-	game_over_instance.layer = 3  # 确保 GameOver 在最上层
+	game_over_instance.layer = 3
 	add_child(game_over_instance)
 	print("Game Over instance added:", game_over_instance)
 	

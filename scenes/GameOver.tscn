@@ -38,6 +38,8 @@ theme_override_font_sizes/font_size = 40
 text = "You Win!"
 
 [node name="Play Again Button" type="Button" parent="Panel"]
+visibility_layer = 4
+z_index = 3
 layout_mode = 0
 offset_left = 501.0
 offset_top = 320.0
@@ -50,5 +52,3 @@ theme_override_fonts/font = ExtResource("4_0winm")
 theme_override_font_sizes/font_size = 26
 text = "Play Again"
 flat = true
-
-[connection signal="pressed" from="Panel/Play Again Button" to="." method="_on_play_again_button_pressed"]
