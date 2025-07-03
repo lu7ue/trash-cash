@@ -3,6 +3,9 @@ extends Node2D
 # References
 @onready var money_label = $"Tool Bar/Money/Money Label"
 @onready var ground_area = $"Ground Area"
+@onready var info_button = $"Tool Bar/Info/Info Button"
+var info_instance: CanvasLayer
+const InfoScene := preload("res://scenes/Info.tscn")
 
 func _ready() -> void:
 	# Connect money changed signal
@@ -17,22 +20,22 @@ func _ready() -> void:
 	# Update initial money display
 	_on_money_changed(GameState.player_money)
 	
-	# 实例化 Info 场景并加为子节点
+	# create instance for Info scene and add sub nodes for it
 	info_instance = InfoScene.instantiate()
-	info_instance.visible = false       # 默认隐藏
+	info_instance.visible = false
 	add_child(info_instance)
-
-	# 连接 info 按钮
-	info_button.pressed.connect(_on_info_pressed)
+	print("Info instance added:", info_instance)
+	
+	# connect with info btn
+	if info_button:
+		info_button.pressed.connect(_on_info_pressed)
+	else:
+		print("Error: Info button not found at path 'Tool Bar/Info/Info Button'")
 
 func _on_money_changed(amount: int) -> void:
 	money_label.text = "$ " + str(amount)
-	
-	
-@onready var info_button = $"Tool Bar/Info/Info Button"  # 替换为你实际的按钮路径
-var info_instance: CanvasLayer                # 用来引用 Info 场景的实例
-
-const InfoScene := preload("res://scenes/Info.tscn")  # 替换路径为你实际路径
 
 func _on_info_pressed():
-	info_instance.visible = true        # 显示 Info 场景
+	print("Info button pressed!")
+	info_instance.visible = true
+	get_tree().paused = true
