@@ -35,9 +35,10 @@ func _ready() -> void:
 	# Create GameOver instance
 	game_over_instance = GameOverScene.instantiate()
 	game_over_instance.visible = false
-	game_over_instance.layer = 3
+	game_over_instance.layer = 3  # 保持与GameOver场景一致
 	add_child(game_over_instance)
-	print("Game Over instance added:", game_over_instance)
+	# 确保添加到场景树后再设置其他属性
+	game_over_instance.set_process_mode(Node.PROCESS_MODE_ALWAYS)  # 确保能处理输入
 	
 	# Connect info button
 	if info_button:
