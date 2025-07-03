@@ -34,6 +34,7 @@ scale = Vector2(0.18, 0.18)
 texture = ExtResource("1_jfmby")
 
 [node name="Info Text" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = -144.0
 offset_top = -170.0
 offset_right = 196.0
@@ -50,6 +51,7 @@ autowrap_mode = 3
 
 [node name="Close Button" type="Button" parent="Panel"]
 process_mode = 2
+layout_mode = 0
 offset_left = -34.0
 offset_top = 164.0
 offset_right = 64.0

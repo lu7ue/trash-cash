@@ -23,8 +23,8 @@ var items: Array = [
 ]
 
 # Ground area boundaries
-var ground_width: float = 1920
-var ground_height: float = 620
+var ground_width: float = 1860
+var ground_height: float = 600
 var ground_center: Vector2 = Vector2(0, -150)
 
 func _ready() -> void:

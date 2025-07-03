@@ -35,10 +35,9 @@ func _ready() -> void:
 	# Create GameOver instance
 	game_over_instance = GameOverScene.instantiate()
 	game_over_instance.visible = false
-	game_over_instance.layer = 3  # 保持与GameOver场景一致
+	game_over_instance.layer = 3
 	add_child(game_over_instance)
-	# 确保添加到场景树后再设置其他属性
-	game_over_instance.set_process_mode(Node.PROCESS_MODE_ALWAYS)  # 确保能处理输入
+	game_over_instance.set_process_mode(Node.PROCESS_MODE_ALWAYS)
 	
 	# Connect info button
 	if info_button:
@@ -49,7 +48,7 @@ func _ready() -> void:
 func _on_money_changed(amount: int) -> void:
 	money_label.text = "$ " + str(amount)
 	print("Money updated to:", amount)
-	if amount >= 50 and not game_ended:
+	if amount >= 1000000 and not game_ended:
 		print("Money reached 50! Showing Game Over popup...")
 		game_ended = true
 		game_over_instance.visible = true

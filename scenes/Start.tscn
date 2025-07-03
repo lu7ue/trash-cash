@@ -1,8 +1,7 @@
-[gd_scene load_steps=40 format=3 uid="uid://dth0sargccsp4"]
+[gd_scene load_steps=39 format=3 uid="uid://dth0sargccsp4"]
 
 [ext_resource type="Texture2D" uid="uid://b6byid4afjs1g" path="res://assets/graphics/ui/background/start_page.jpg" id="1_8t08e"]
 [ext_resource type="Script" uid="uid://su34bffotfp1" path="res://scripts/start.gd" id="1_waqk2"]
-[ext_resource type="Texture2D" uid="uid://ckxw248qhus4l" path="res://assets/graphics/ui/button/start_btn.png" id="2_yx83k"]
 [ext_resource type="FontFile" uid="uid://bcxi75wos6phq" path="res://assets/font/ComicRelief-Regular.ttf" id="4_waqk2"]
 [ext_resource type="Texture2D" uid="uid://jpbg5v1fn7gu" path="res://assets/graphics/items/apple_core.png" id="5_d48hf"]
 [ext_resource type="FontFile" uid="uid://doi130l25k233" path="res://assets/font/ComicRelief-Bold.ttf" id="5_pxerq"]
@@ -192,7 +191,6 @@ offset_top = 52.0
 offset_right = 1415.0
 offset_bottom = 660.0
 scale = Vector2(0.15, 0.15)
-icon = ExtResource("2_yx83k")
 flat = true
 metadata/_edit_use_anchors_ = true
 
