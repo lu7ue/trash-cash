@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjvyjoa3jwfvv"]
+
+[ext_resource type="Script" uid="uid://cn2isc2b7p1k3" path="res://scripts/info.gd" id="1_e34te"]
+[ext_resource type="Texture2D" uid="uid://b5d1lrro57y4d" path="res://assets/graphics/ui/textarea/popup_frame_info.png" id="1_jfmby"]
+[ext_resource type="FontFile" uid="uid://bcxi75wos6phq" path="res://assets/font/ComicRelief-Regular.ttf" id="2_o8i12"]
+[ext_resource type="FontFile" uid="uid://doi130l25k233" path="res://assets/font/ComicRelief-Bold.ttf" id="4_gign5"]
+
+[node name="Info" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_e34te")
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup Frame Info2" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -194.0
+offset_top = -246.0
+offset_right = 2206.0
+offset_bottom = 2634.0
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_jfmby")
+
+[node name="Info Text" type="Label" parent="Panel"]
+offset_left = -144.0
+offset_top = -170.0
+offset_right = 196.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_fonts/font = ExtResource("2_o8i12")
+theme_override_font_sizes/font_size = 20
+text = "i. Clean up the world and rake in a cool $1,000,000 to save the day!
+
+ii. Use your trusty left-click to snatch up trash and treasures, turning garbage into gold!
+
+iii. Buy epic Tools, Staff, and Drinks to supercharge your cleanup and skyrocket your earnings!"
+autowrap_mode = 3
+
+[node name="Close Button" type="Button" parent="Panel"]
+process_mode = 2
+offset_left = -34.0
+offset_top = 164.0
+offset_right = 64.0
+offset_bottom = 215.0
+theme_override_colors/font_outline_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_gign5")
+theme_override_font_sizes/font_size = 20
+text = "OKAY!"
+flat = true

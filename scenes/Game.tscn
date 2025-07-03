@@ -746,3 +746,5 @@ theme_override_font_sizes/font_size = 15
 text = "Increase the price for X seconds"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[connection signal="pressed" from="Tool Bar/Info/Info Button" to="." method="_on_info_button_pressed"]
