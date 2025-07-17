@@ -52,19 +52,42 @@ func get_texture_path() -> String:
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		# Update money
-		if is_poop:
-			GameState.remove_money(value)  # Poop stops deducting when clicked
+		var click_range = 32.0
+		if GameState.active_tool:
+			match GameState.active_tool:
+				"spoon": click_range = 50.0
+				"broom": click_range = 75.0
+				"net": click_range = 100.0
+				"vacuum": click_range = 150.0
+			var items = get_tree().get_nodes_in_group("items")
+			for item in items:
+				if item.global_position.distance_to(get_global_mouse_position()) <= click_range:
+					var value = item.value
+					if item.is_poop:
+						GameState.remove_money(value)
+					else:
+						GameState.add_money(value)
+					var floating_text = floating_text_scene.instantiate()
+					floating_text.global_position = item.global_position
+					floating_text.set_text("%s%d" % ["+" if value > 0 else "-", abs(value)])
+					get_tree().get_root().add_child(floating_text)
+					item.queue_free()
+			if GameState.active_tool:
+				GameState.use_tool()
 		else:
-			GameState.add_money(value)
+			# Update money
+			if is_poop:
+				GameState.remove_money(value)  # Poop stops deducting when clicked
+			else:
+				GameState.add_money(value)
 			
 			var floating_text = floating_text_scene.instantiate()
 			floating_text.global_position = global_position
 			floating_text.set_text("+%d" % value)
 			get_tree().get_root().add_child(floating_text)
 
-		# Remove item
-		queue_free()
+			# Remove item
+			queue_free()
 
 func _on_poop_penalty() -> void:
 	if is_poop:
