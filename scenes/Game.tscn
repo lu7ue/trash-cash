@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cyi8e3yq5shns"]
+[gd_scene load_steps=22 format=3 uid="uid://cyi8e3yq5shns"]
 
 [ext_resource type="Texture2D" uid="uid://b80bc2ejt7h2n" path="res://assets/graphics/ui/background/main_page.PNG" id="1_45i86"]
 [ext_resource type="Script" uid="uid://qlqm2lh8c48q" path="res://scripts/game.gd" id="1_a8wo8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bsywtj2x76t4v" path="res://assets/graphics/ui/background/ground_area.jpg" id="5_7ua8r"]
 [ext_resource type="FontFile" uid="uid://bcxi75wos6phq" path="res://assets/font/ComicRelief-Regular.ttf" id="5_attvq"]
 [ext_resource type="Texture2D" uid="uid://bnvvoqewulsdj" path="res://assets/graphics/ui/background/inventory_frame.PNG" id="6_sv1m6"]
+[ext_resource type="Script" uid="uid://coe6w4o6xi6j6" path="res://scripts/equipment.gd" id="8_a8wo8"]
 [ext_resource type="Texture2D" uid="uid://b4n7fewo5ex28" path="res://assets/graphics/equipment/staff_human_icon.PNG" id="10_sv1m6"]
 [ext_resource type="Texture2D" uid="uid://yumsl4d7riyj" path="res://assets/graphics/equipment/staff_robot_icon.PNG" id="11_a8wo8"]
 [ext_resource type="Texture2D" uid="uid://calo0wsv6ujon" path="res://assets/graphics/equipment/staff_dog_icon.PNG" id="11_sv1m6"]
@@ -104,6 +105,7 @@ scale = Vector2(0.25, 0.248769)
 texture = ExtResource("5_7ua8r")
 
 [node name="Equipment" type="Node2D" parent="."]
+script = ExtResource("8_a8wo8")
 
 [node name="Inventory Frame" type="Sprite2D" parent="Equipment"]
 position = Vector2(0, 360.031)
@@ -589,7 +591,7 @@ offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
-text = "$ 12,00"
+text = "$ 200,00"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -602,7 +604,7 @@ offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 15
-text = "Increase the price for X seconds"
+text = "1.5 times the trash price for 30 seconds"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -636,7 +638,7 @@ offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
-text = "$ 12,00"
+text = "$ 500,00"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -649,7 +651,7 @@ offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 15
-text = "Increase the price for X seconds"
+text = "2 times the trash price for 30 seconds"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -683,7 +685,7 @@ offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
-text = "$ 12,00"
+text = "$ 600,00"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -696,7 +698,7 @@ offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 15
-text = "Increase the price for X seconds"
+text = "3 times the trash price for 30 seconds"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -730,7 +732,7 @@ offset_bottom = 318.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 17
-text = "$ 12,00"
+text = "$ 800,00"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -743,7 +745,7 @@ offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.192157, 0.192157, 0.192157, 1)
 theme_override_fonts/font = ExtResource("5_attvq")
 theme_override_font_sizes/font_size = 15
-text = "Increase the price for X seconds"
+text = "4 times the trash price for 30 seconds"
 vertical_alignment = 1
 autowrap_mode = 2
 

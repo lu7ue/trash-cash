@@ -5,7 +5,7 @@ signal reset_game
 
 @export var player_money: int = 0:
 	set(value):
-		player_money = max(0, value)
+		player_money = value
 		money_changed.emit(player_money)
 	get:
 		return player_money
